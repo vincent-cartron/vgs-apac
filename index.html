@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VGS Asia Pacific Enabler Partnership Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1A1F71;--navy2:#2A3290;--gold:#F7B600;--ink:#1d2033;--muted:#5b607a;--line:#e3e5ef;--bg:#f5f6fa;--card:#fff;--green:#1f7a4d;--amber:#a86a00}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.5}
+a{color:var(--navy2)}
+header{background:var(--navy);color:#fff;padding:28px 20px 22px;border-bottom:5px solid var(--gold)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header h1{margin:0 0 6px;font-size:clamp(22px,4vw,32px);line-height:1.2}
+header p{margin:0;color:#d7daf3;font-size:14px}
+.tag{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:12px;padding:3px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:.3px}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav a{display:inline-block;padding:12px 12px;font-size:13px;font-weight:600;color:var(--navy);text-decoration:none}
+nav a:hover{color:var(--navy2);box-shadow:inset 0 -3px 0 var(--gold)}
+section{padding:26px 0 6px}
+h2{font-size:20px;margin:0 0 4px;color:var(--navy)}
+.sub{color:var(--muted);margin:0 0 16px;font-size:14px}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.card h3{margin:0 0 6px;font-size:16px;color:var(--navy)}
+.card p{margin:0;font-size:14px;color:#33384f}
+.num{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:700;align-items:center;justify-content:center;margin-bottom:8px}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;background:#eceefa;color:var(--navy);margin:2px 4px 2px 0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 13px;font:600 13px Inter,sans-serif;color:var(--navy);cursor:pointer}
+.filters button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+th{background:#eef0f8;color:var(--navy);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+td.src a{font-size:12px}
+.mx td,.mx th{text-align:center}
+.mx td:first-child,.mx th:first-child{text-align:left}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%}
+.d1{background:var(--navy)}.d2{background:var(--gold)}.d0{background:#fff;border:2px dashed #b8bccf}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.step{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:10px;padding:12px}
+.step b{color:var(--navy);display:block;margin-bottom:4px}
+.step small{color:var(--muted);display:block;margin-top:6px}
+.score{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.row{margin-bottom:12px}
+.row label{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.row label em{font-style:normal;color:var(--muted);font-weight:500}
+input[type=range]{width:100%;accent-color:var(--navy)}
+.result{background:var(--navy);color:#fff;border-radius:12px;padding:18px;text-align:center}
+.result .big{font-size:44px;font-weight:700;line-height:1}
+.result .tier{display:inline-block;margin-top:10px;background:var(--gold);color:var(--navy);font-weight:700;padding:4px 12px;border-radius:20px}
+.result p{color:#d7daf3;font-size:13px;margin:10px 0 0}
+select{width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;font:500 14px Inter,sans-serif;margin-bottom:14px}
+ul.chk{margin:6px 0 0;padding:0;list-style:none}ul.chk li{position:relative;padding-left:24px;margin-bottom:7px;font-size:14px}ul.chk li::before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border-radius:4px;background:var(--gold)}
+ol.q{margin:0;padding-left:20px}ol.q li{margin-bottom:8px;font-size:14px}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+footer{padding:26px 0 40px;color:var(--muted);font-size:12px}
+footer li{margin-bottom:4px}
+@media (max-width:700px){
+ body{font-size:14px}
+ .score{grid-template-columns:1fr}
+ table.cards thead{display:none}
+ table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
+ table.cards tr{border-bottom:6px solid var(--bg);padding:6px 0}
+ table.cards td{border:none;padding:4px 12px}
+ table.cards td::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase}
+ .mxwrap{overflow-x:auto}
+ .mx{min-width:560px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="tag">VISA GOVERNMENT SOLUTIONS, ASIA PACIFIC</span>
+<h1>Enabler Partnership Board</h1>
+<p>A first view of how enabler partners can become a scalable route to market for VGS in Asia Pacific. Prepared by Vincent Cartron, November 2026, from public sources only. It uses no Visa internal data.</p>
+</div></header>
+<nav><div class="wrap">
+<a href="#thesis">Thesis</a><a href="#archetypes">Partner types</a><a href="#references">Public references</a><a href="#map">Use case map</a><a href="#lifecycle">Lifecycle</a><a href="#touchpoints">Touchpoints</a><a href="#deals">RFP and deals</a><a href="#scorecard">Scorecard</a><a href="#metrics">Metrics</a><a href="#plan">First 90 days</a><a href="#questions">Questions</a><a href="#sources">Sources</a>
+</div></nav>
+
+<main class="wrap">
+<section id="thesis">
+<h2>Thesis: prioritise, package, scale</h2>
+<p class="sub">Governments drive a large share of payment flows, and enabler partners already sit inside the agencies that move this money.</p>
+<div class="grid g3">
+<div class="card"><div class="num">1</div><h3>Prioritise</h3><p>Build one ranked pipeline of partners, use cases and markets with the in-market VGS sales leads, so that each partner has a clear reason to work with Visa and a named first opportunity.</p></div>
+<div class="card"><div class="num">2</div><h3>Package</h3><p>Turn each priority use case into a joint solution that combines Visa capabilities with the partner platform, and feed the gaps back to the Visa solutions teams for the product roadmap.</p></div>
+<div class="card"><div class="num">3</div><h3>Scale</h3><p>Own the partners that already operate in several Asia Pacific markets with account plans, contracting, onboarding and joint RFP strategies, so that one agreement opens several markets.</p></div>
+</div>
+</section>
+
+<section id="archetypes">
+<h2>Partner types in scope</h2>
+<p class="sub">These types come from the role scope. Issuer and acquiring banks stay the delivery channel for most VGS solutions.</p>
+<div class="grid g3">
+<div class="card"><h3>Digital government platforms and system integrators</h3><p>They build and run the citizen and agency platforms where payments happen, and they lead most government RFPs.</p><span class="pill">RFP route</span><span class="pill">Multi-market</span></div>
+<div class="card"><h3>GovTech software and fintechs</h3><p>Disbursement, procurement, tax and case management software, plus processors and fintechs that can embed Visa credentials.</p><span class="pill">Embed</span><span class="pill">Fast to launch</span></div>
+<div class="card"><h3>Sector vertical specialists</h3><p>Transit, postal networks, health and logistics providers, where open-loop acceptance and commercial cards solve a clear agency problem.</p><span class="pill">Vertical depth</span></div>
+<div class="card"><h3>Humanitarian and development organisations</h3><p>Multilateral banks, NGOs and aid agencies that fund or run cash and voucher programmes and need fast, traceable disbursement.</p><span class="pill">Social impact</span></div>
+<div class="card"><h3>Issuer and acquiring banks</h3><p>State and commercial banks that issue government cards and acquire government acceptance, and that partners need for every launch.</p><span class="pill">Delivery channel</span></div>
+<div class="card"><h3>Identity and digital public infrastructure</h3><p>Digital identity and DPI providers that link eligibility, identity and payment, which governments now ask for as one solution.</p><span class="pill">DPI</span></div>
+</div>
+</section>
+
+<section id="references">
+<h2>Public partner references</h2>
+<p class="sub">Partnerships that Visa or its partners announced in public. Use the filters to focus on Asia Pacific or on a use case.</p>
+<div class="filters" id="flt">
+<button class="on" data-f="all">All</button><button data-f="apac">Asia Pacific</button><button data-f="global">Global pattern</button><button data-f="acc">Acceptance</button><button data-f="dis">Disbursement</button><button data-f="com">Commercial</button><button data-f="mob">Mobility</button><button data-f="dpi">DPI</button>
+</div>
+<table class="cards" id="reftab">
+<thead><tr><th>Partner</th><th>Type</th><th>Market</th><th>What was announced</th><th>Source</th></tr></thead>
+<tbody>
+<tr data-t="apac acc com"><td data-l="Partner"><b>FPT Corporation</b></td><td data-l="Type">Technology company and system integrator</td><td data-l="Market">Vietnam</td><td data-l="What was announced">MOU to modernise government services, digitise municipal services and give SMEs business credit cards.</td><td data-l="Source" class="src"><a href="https://fpt.com/en/news/fpt-news/fpt-hop-tac-voi-visa">FPT</a></td></tr>
+<tr data-t="apac acc"><td data-l="Partner"><b>ETC and EPAY</b></td><td data-l="Type">GovTech IT provider and payment provider</td><td data-l="Market">Vietnam</td><td data-l="What was announced">Collaboration to accelerate digital payments in public services. ETC builds solutions for government agencies and banks.</td><td data-l="Source" class="src"><a href="https://www.visa.com.vn/en_VN/about-visa/newsroom/press-releases/visa-and-etc-epay-enter-agreement-to-accelerate-digital-payments-in-public-sectors-in-vietnam.html">Visa Vietnam</a></td></tr>
+<tr data-t="apac acc com mob"><td data-l="Partner"><b>LANDBANK</b></td><td data-l="Type">State-owned bank</td><td data-l="Market">Philippines</td><td data-l="What was announced">Card acceptance across digital government platforms, transit, agencies and procurement systems (Dec 2025), plus a Government Purchase Card for agency spend.</td><td data-l="Source" class="src"><a href="https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-landbank-sign-partnership-to-accelerate-digital-payment-acceptance-across-government-platforms.html">Visa Philippines</a>, <a href="https://procurementmag.com/articles/visa-and-landbank-expand-government-procurement-payments">Procurement Magazine</a></td></tr>
+<tr data-t="global dis"><td data-l="Partner"><b>Western Union</b></td><td data-l="Type">Money movement provider</td><td data-l="Market">Includes Asia Pacific</td><td data-l="What was announced">Debit card issuance in several regions, with prepaid cards for government and NGO customers in humanitarian relief (Mar 2024).</td><td data-l="Source" class="src"><a href="https://www.businesswire.com/news/home/20240305895918/en/Visa-and-Western-Union-Announce-Expanded-Collaboration-Transforming-How-Money-Travels-Cross-Border/">Business Wire</a></td></tr>
+<tr data-t="global dpi"><td data-l="Partner"><b>TECH5</b></td><td data-l="Type">Biometrics and digital identity</td><td data-l="Market">Global</td><td data-l="What was announced">Seven-year partnership to advance digital public infrastructure, with Visa funding for joint projects and a joint sales framework.</td><td data-l="Source" class="src"><a href="https://regtechanalyst.com/?p=77387">RegTech Analyst</a></td></tr>
+<tr data-t="global dis"><td data-l="Partner"><b>Episode Six and Secupay</b></td><td data-l="Type">Card processor and payment provider</td><td data-l="Market">Global</td><td data-l="What was announced">Government-to-citizen disbursements through the Visa Ready for Government Disbursements programme.</td><td data-l="Source" class="src"><a href="https://www.pymnts.com/?p=2417262">PYMNTS</a></td></tr>
+<tr data-t="global dis"><td data-l="Partner"><b>GiveCard</b></td><td data-l="Type">Disbursement platform</td><td data-l="Market">North America</td><td data-l="What was announced">Digital disbursement programmes for nonprofits and government agencies. It is a pattern to test with Asia Pacific platforms.</td><td data-l="Source" class="src"><a href="https://www.finextra.com/pressarticle/106111/givecard-partners-visa-to-modernise-disbursements-in-the-public-sector">Finextra</a></td></tr>
+<tr data-t="global mob"><td data-l="Partner"><b>Visa Ready for Transit</b></td><td data-l="Type">Partner programme (technology providers and consultancies)</td><td data-l="Market">Global</td><td data-l="What was announced">100 enrolled partners give transit agencies certified contactless solutions and simpler partner selection.</td><td data-l="Source" class="src"><a href="https://www.paymentsjournal.com/visa-expands-transit-partner-program-to-accelerate-delivery-of-improved-rider-journeys-around-the-world/amp/">Payments Journal</a></td></tr>
+</tbody></table>
+<p class="note">Three findings: (1) in Vietnam, Visa works with local GovTech and SI players to reach agencies, which is the enabler model in practice; (2) in the Philippines, one state bank covers acceptance, procurement and transit in a single partnership; (3) the global programmes (Visa Ready, TECH5) give a repeatable template for Asia Pacific partners.</p>
+</section>
+
+<section id="map">
+<h2>Use case map by market</h2>
+<p class="sub">Public signals only. A blank cell means that I did not find a public signal yet, and it is a question for week one.</p>
+<div class="mxwrap"><table class="mx">
+<thead><tr><th>Use case</th><th>Vietnam</th><th>Philippines</th><th>Australia</th><th>Singapore</th><th>Indonesia</th><th>Other markets</th></tr></thead>
+<tbody>
+<tr><td>Citizen payments to government (taxes, fees)</td><td><span class="dot d1"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td></tr>
+<tr><td>Commercial payments and procurement cards</td><td><span class="dot d2"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td></tr>
+<tr><td>Disbursements and social payments</td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d2"></span></td></tr>
+<tr><td>Urban mobility and tap to ride</td><td><span class="dot d0"></span></td><td><span class="dot d1"></span></td><td><span class="dot d1"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d2"></span></td></tr>
+<tr><td>Data insights for tourism and policy</td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td></tr>
+<tr><td>Digital identity and DPI</td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d2"></span></td></tr>
+</tbody></table></div>
+<div class="legend"><span><i class="dot d1"></i> Public partnership or live service in the market</span><span><i class="dot d2"></i> Adjacent signal or global pattern to bring in</span><span><i class="dot d0"></i> No public signal found yet</span></div>
+<p class="note">Bases: Vietnam (FPT, ETC and EPAY), Philippines (LANDBANK), Australia (open-loop transit and the Visa council data insights case study), Singapore (card payment on buses and trains through SimplyGo), global programmes for the other cells.</p>
+</section>
+
+<section id="lifecycle">
+<h2>Enabler partner lifecycle</h2>
+<p class="sub">One motion for every partner, so that the in-market sales leads know what to expect at each step.</p>
+<div class="steps">
+<div class="step"><b>1. Identify</b>Map partners by use case, market and agency footprint with the in-market VGS leads.<small>Measure: ranked partner list</small></div>
+<div class="step"><b>2. Qualify</b>Check government references, multi-market reach, bank relationships and integration readiness.<small>Measure: scorecard tier</small></div>
+<div class="step"><b>3. Structure</b>Agree the commercial or strategic agreement, the joint value proposition and the first target agencies.<small>Measure: signed agreement</small></div>
+<div class="step"><b>4. Onboard</b>Complete contracting, supplier onboarding, certification and sales enablement for both teams.<small>Measure: time to first joint pitch</small></div>
+<div class="step"><b>5. Co-sell</b>Run joint account plans and RFP strategies, with clear roles for Visa, the partner and the bank.<small>Measure: joint pipeline and RFPs</small></div>
+<div class="step"><b>6. Scale</b>Repeat the solution in the next market and feed product gaps to the Visa solutions teams.<small>Measure: markets live, volume</small></div>
+</div>
+</section>
+
+<section id="touchpoints">
+<h2>Cross-functional touchpoints</h2>
+<p class="sub">This table shows which Visa teams join at each lifecycle step, so that the partner works with one coordinated team.</p>
+<table class="cards">
+<thead><tr><th>Lifecycle step</th><th>Internal teams</th><th>Touchpoint</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td data-l="Lifecycle step"><b>Identify and qualify</b></td><td data-l="Internal teams">In-market VGS sales leads, global VGS colleagues, Government Engagement</td><td data-l="Touchpoint">Monthly partner pipeline review by market</td><td data-l="Output">Ranked partner list with a named first opportunity</td></tr>
+<tr><td data-l="Lifecycle step"><b>Structure</b></td><td data-l="Internal teams">Legal, Risk, Compliance, Finance</td><td data-l="Touchpoint">Deal desk review before the term sheet</td><td data-l="Output">Approved agreement type and commercial model</td></tr>
+<tr><td data-l="Lifecycle step"><b>Onboard</b></td><td data-l="Internal teams">Client Services, VGS pre-sales, Procurement for supplier onboarding</td><td data-l="Touchpoint">Onboarding checklist and technical integration plan</td><td data-l="Output">Partner certified and enabled</td></tr>
+<tr><td data-l="Lifecycle step"><b>Package</b></td><td data-l="Internal teams">Products and Solutions, regional solution lead</td><td data-l="Touchpoint">Quarterly product roadmap sync</td><td data-l="Output">Partner requirements logged on the roadmap</td></tr>
+<tr><td data-l="Lifecycle step"><b>Co-sell</b></td><td data-l="Internal teams">In-market VGS sales leads, Marketing and Communications</td><td data-l="Touchpoint">Sales enablement sessions and joint account plans</td><td data-l="Output">Joint pipeline and RFP pursuits</td></tr>
+<tr><td data-l="Lifecycle step"><b>Scale</b></td><td data-l="Internal teams">VGS Asia Pacific leadership, global VGS</td><td data-l="Touchpoint">Quarterly business review with partner scorecards</td><td data-l="Output">Decision to expand, hold or exit by market</td></tr>
+</tbody></table>
+</section>
+
+<section id="deals">
+<h2>RFP and deal structuring levers</h2>
+<p class="sub">These are the ways VGS can support partner-led bids and the commercial frameworks to choose from. Each lever needs approval from the relevant Visa teams.</p>
+<div class="grid g2">
+<div class="card"><h3>Partner-led RFP support</h3>
+<ul class="chk">
+<li>Bid or no-bid review with the partner and the in-market sales lead</li>
+<li>Clear roles for Visa, the partner and the issuing or acquiring bank in the response</li>
+<li>Visa solution content, security and compliance answers, and case studies</li>
+<li>Joint pricing logic and a value case for the agency, such as cost to collect or time to disburse</li>
+<li>Early engagement with the agency through the partner, inside procurement rules</li>
+<li>Post-award plan for launch, onboarding and adoption</li>
+</ul></div>
+<div class="card"><h3>Commercial and contracting frameworks</h3>
+<ul class="chk">
+<li>Referral or reseller agreement with a revenue share on volume</li>
+<li>Co-investment in go-to-market, such as joint events, pilots and marketing funds</li>
+<li>Technology partnership with API integration and service level commitments</li>
+<li>Programme enrolment, such as Visa Ready, with certification steps</li>
+<li>Strategic agreement for multi-market partners with an annual joint business plan</li>
+<li>Review and exit clauses tied to the partner scorecard</li>
+</ul></div>
+</div>
+</section>
+
+<section id="scorecard">
+<h2>Partner prioritisation scorecard</h2>
+<p class="sub">An illustrative model. The weights are a starting point to agree with the team, and the example partners use placeholder scores.</p>
+<div class="score">
+<div class="card">
+<select id="preset" aria-label="Example partner">
+<option value="custom">Your own scores</option>
+<option value="si" selected>Example: regional system integrator</option>
+<option value="ft">Example: disbursement fintech</option>
+<option value="dev">Example: development organisation</option>
+</select>
+<div id="sliders"></div>
+</div>
+<div class="result">
+<div style="font-size:13px;color:#d7daf3;margin-bottom:6px">Weighted score</div>
+<div class="big" id="total">0</div>
+<div class="tier" id="tier">Tier</div>
+<p id="advice"></p>
+</div>
+</div>
+</section>
+
+<section id="metrics">
+<h2>Pipeline health metrics</h2>
+<p class="sub">These are the measures I propose to track every month after a partner is selected. The targets are blank on purpose, because they need the team's baseline.</p>
+<table class="cards">
+<thead><tr><th>Metric</th><th>Definition</th><th>Why it matters</th><th>Cadence</th><th>Target</th></tr></thead>
+<tbody>
+<tr><td data-l="Metric"><b>Partner-sourced pipeline</b></td><td data-l="Definition">Value of opportunities that a partner brings first, by market and use case</td><td data-l="Why it matters">Shows whether partners are a real route to market</td><td data-l="Cadence">Monthly</td><td data-l="Target">To agree</td></tr>
+<tr><td data-l="Metric"><b>Partner-influenced pipeline</b></td><td data-l="Definition">Value of VGS opportunities where a partner is part of the solution or the bid</td><td data-l="Why it matters">Shows the reach of partners beyond the deals they bring</td><td data-l="Cadence">Monthly</td><td data-l="Target">To agree</td></tr>
+<tr><td data-l="Metric"><b>Time to onboard</b></td><td data-l="Definition">Days from signed agreement to the first joint pitch</td><td data-l="Why it matters">Finds friction in contracting and enablement</td><td data-l="Cadence">Per partner</td><td data-l="Target">To agree</td></tr>
+<tr><td data-l="Metric"><b>Co-sell conversion rate</b></td><td data-l="Definition">Share of joint opportunities that move from qualified to won</td><td data-l="Why it matters">Tests the quality of joint solutions and bids</td><td data-l="Cadence">Quarterly</td><td data-l="Target">To agree</td></tr>
+<tr><td data-l="Metric"><b>RFP win rate with partners</b></td><td data-l="Definition">Government RFPs won with a partner, divided by RFPs submitted with a partner</td><td data-l="Why it matters">Shows which partners win public tenders</td><td data-l="Cadence">Quarterly</td><td data-l="Target">To agree</td></tr>
+<tr><td data-l="Metric"><b>Pipeline velocity</b></td><td data-l="Definition">Average days from first meeting to award, by use case</td><td data-l="Why it matters">Helps plan revenue across long public sector cycles</td><td data-l="Cadence">Quarterly</td><td data-l="Target">To agree</td></tr>
+<tr><td data-l="Metric"><b>Markets live per partner</b></td><td data-l="Definition">Number of markets where a partner has a launched VGS solution</td><td data-l="Why it matters">Measures scale beyond the first market</td><td data-l="Cadence">Quarterly</td><td data-l="Target">To agree</td></tr>
+</tbody></table>
+</section>
+
+<section id="plan">
+<h2>First 90 days, proposed</h2>
+<p class="sub">A plan to test with the team, built around the role scope.</p>
+<div class="grid g3">
+<div class="card"><h3>Days 1 to 30: listen and map</h3><p>Meet the in-market VGS sales leads, the solutions teams and global VGS colleagues. Review the signed partners and the live RFPs. Build the first ranked list of partners, use cases and markets.</p></div>
+<div class="card"><h3>Days 31 to 60: prioritise and package</h3><p>Agree the top partners per market with the sales leads. Write the joint value propositions for two or three priority use cases, and open structured discussions with the first multi-market partners.</p></div>
+<div class="card"><h3>Days 61 to 90: prove it in the field</h3><p>Start joint account plans with the priority partners, support the first joint RFP response, and set a quarterly review cadence with partner scorecards for leadership.</p></div>
+</div>
+</section>
+
+<section id="questions">
+<h2>Questions for week one</h2>
+<div class="card"><ol class="q">
+<li>Which enabler partners are already signed in Asia Pacific, and which ones operate in more than one market?</li>
+<li>Which markets have an in-market VGS sales lead today, and how do they want partner support?</li>
+<li>Which use cases are the regional priorities for the next twelve months: disbursements, acceptance, commercial payments, mobility, data or new flows such as CBDC and stablecoins?</li>
+<li>Which government RFPs are live or expected, and which partners lead them?</li>
+<li>How is partner-influenced revenue measured and credited to the team?</li>
+<li>Which partner programmes (for example Visa Ready) and which funding can support onboarding in the region?</li>
+</ol></div>
+</section>
+</main>
+
+<footer><div class="wrap" id="sources">
+<b>Sources (public, checked November 2026)</b>
+<ul>
+<li><a href="https://fpt.com/en/news/fpt-news/fpt-hop-tac-voi-visa">FPT: Visa partners with FPT to modernise government services</a></li>
+<li><a href="https://www.visa.com.vn/en_VN/about-visa/newsroom/press-releases/visa-and-etc-epay-enter-agreement-to-accelerate-digital-payments-in-public-sectors-in-vietnam.html">Visa Vietnam: Visa and ETC-EPAY agreement</a></li>
+<li><a href="https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-landbank-sign-partnership-to-accelerate-digital-payment-acceptance-across-government-platforms.html">Visa Philippines: Visa and LANDBANK partnership</a></li>
+<li><a href="https://procurementmag.com/articles/visa-and-landbank-expand-government-procurement-payments">Procurement Magazine: LANDBANK Visa Government Purchase Card</a></li>
+<li><a href="https://www.businesswire.com/news/home/20240305895918/en/Visa-and-Western-Union-Announce-Expanded-Collaboration-Transforming-How-Money-Travels-Cross-Border/">Business Wire: Visa and Western Union</a></li>
+<li><a href="https://regtechanalyst.com/?p=77387">RegTech Analyst: Visa and TECH5</a></li>
+<li><a href="https://www.pymnts.com/?p=2417262">PYMNTS: Visa, Episode Six and Secupay</a></li>
+<li><a href="https://www.finextra.com/pressarticle/106111/givecard-partners-visa-to-modernise-disbursements-in-the-public-sector">Finextra: GiveCard and Visa</a></li>
+<li><a href="https://www.paymentsjournal.com/visa-expands-transit-partner-program-to-accelerate-delivery-of-improved-rider-journeys-around-the-world/amp/">Payments Journal: Visa Ready for Transit</a></li>
+<li><a href="https://www.visa.co.in/supporting-info/australia-case-study.html">Visa: Australia data insights case study</a></li>
+<li><a href="https://au.review.visa.com/pay-with-visa/featured-technologies/transit.html">Visa: tap to pay on buses and trains, TransitLink SimplyGo</a></li>
+<li><a href="https://partner.visa.com/site/programs/visa-ready/government-disbursements.html">Visa Ready: Government Disbursements</a></li>
+</ul>
+<p>This page is an outside view built from public information. It makes no claim about Visa internal plans, partners or figures.</p>
+</div></footer>
+
+<script>
+var crit=[["Government references in Asia Pacific",25],["Multi-market reach",20],["Visa integration readiness",20],["Bank relationships",15],["Joint pipeline potential",20]];
+var presets={si:[5,4,3,4,4],ft:[3,3,5,3,3],dev:[4,5,2,3,3]};
+var box=document.getElementById("sliders"),sel=document.getElementById("preset");
+crit.forEach(function(c,i){box.insertAdjacentHTML("beforeend",'<div class="row"><label>'+c[0]+' <em>weight '+c[1]+'%, score <span id="v'+i+'">3</span>/5</em></label><input type="range" min="1" max="5" step="1" value="3" id="s'+i+'" aria-label="'+c[0]+'"></div>');});
+function calc(){var t=0;crit.forEach(function(c,i){var v=+document.getElementById("s"+i).value;document.getElementById("v"+i).textContent=v;t+=v/5*c[1];});t=Math.round(t);document.getElementById("total").textContent=t;var tier,adv;if(t>=75){tier="Tier 1: scale";adv="Own the relationship with an account plan, contracting and joint RFP strategy across markets.";}else if(t>=55){tier="Tier 2: build";adv="Package one joint use case and prove it in one market before a wider agreement.";}else{tier="Tier 3: monitor";adv="Support the in-market sales lead on local deals and review again next quarter.";}document.getElementById("tier").textContent=tier;document.getElementById("advice").textContent=adv;}
+function load(k){if(!presets[k])return;presets[k].forEach(function(v,i){document.getElementById("s"+i).value=v;});calc();}
+sel.addEventListener("change",function(){load(sel.value);});
+box.addEventListener("input",function(){sel.value="custom";calc();});
+load("si");
+document.getElementById("flt").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;document.querySelectorAll("#flt button").forEach(function(x){x.classList.toggle("on",x===b);});var f=b.getAttribute("data-f");document.querySelectorAll("#reftab tbody tr").forEach(function(r){r.style.display=(f==="all"||r.getAttribute("data-t").split(" ").indexOf(f)>-1)?"":"none";});});
+</script>
+</body>
+</html>
