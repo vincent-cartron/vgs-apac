@@ -62,14 +62,28 @@ ol.q{margin:0;padding-left:20px}ol.q li{margin-bottom:8px;font-size:14px}
 .note{font-size:12px;color:var(--muted);margin-top:8px}
 footer{padding:26px 0 40px;color:var(--muted);font-size:12px}
 footer li{margin-bottom:4px}
-@media (max-width:700px){
- body{font-size:14px}
- .score{grid-template-columns:1fr}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+section{scroll-margin-top:52px}
+nav{-webkit-overflow-scrolling:touch}
+nav a{padding:14px 12px}
+h3.sec{font-size:16px;color:var(--navy);margin:22px 0 10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px}
+.stat{background:var(--navy);color:#fff;border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:26px;line-height:1.1;color:var(--gold)}
+.stat span{display:block;font-size:13px;color:#d7daf3;margin-top:4px}
+.trend .lbl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin:10px 0 2px}
+.trend .vgs{background:#f3f4fb;border-left:4px solid var(--gold);border-radius:6px;padding:8px 10px;margin-top:4px}
+.say{background:#fff;border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:14px}
+@media (max-width:820px){
  table.cards thead{display:none}
  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
  table.cards tr{border-bottom:6px solid var(--bg);padding:6px 0}
  table.cards td{border:none;padding:4px 12px}
  table.cards td::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase}
+}
+@media (max-width:700px){
+ body{font-size:14px}
+ .score{grid-template-columns:1fr}
  .mxwrap{overflow-x:auto}
  .mx{min-width:560px}
 }
@@ -82,18 +96,60 @@ footer li{margin-bottom:4px}
 <p>A first view of how enabler partners can become a scalable route to market for VGS in Asia Pacific. Prepared by Vincent Cartron, November 2026, from public sources only. It uses no Visa internal data.</p>
 </div></header>
 <nav><div class="wrap">
-<a href="#thesis">Thesis</a><a href="#archetypes">Partner types</a><a href="#references">Public references</a><a href="#map">Use case map</a><a href="#lifecycle">Lifecycle</a><a href="#touchpoints">Touchpoints</a><a href="#deals">RFP and deals</a><a href="#scorecard">Scorecard</a><a href="#metrics">Metrics</a><a href="#plan">First 90 days</a><a href="#questions">Questions</a><a href="#sources">Sources</a>
+<a href="#thesis">Thesis</a><a href="#trends">Trends</a><a href="#archetypes">Partner types</a><a href="#references">Public references</a><a href="#map">Use case map</a><a href="#lifecycle">Lifecycle</a><a href="#touchpoints">Touchpoints</a><a href="#deals">RFP and deals</a><a href="#scorecard">Scorecard</a><a href="#metrics">Metrics</a><a href="#plan">First 90 days</a><a href="#questions">Questions</a><a href="#sources">Sources</a>
 </div></nav>
 
 <main class="wrap">
 <section id="thesis">
-<h2>Thesis: prioritise, package, scale</h2>
+<h2>Thesis: prioritize, package, scale</h2>
 <p class="sub">Governments drive a large share of payment flows, and enabler partners already sit inside the agencies that move this money.</p>
 <div class="grid g3">
-<div class="card"><div class="num">1</div><h3>Prioritise</h3><p>Build one ranked pipeline of partners, use cases and markets with the in-market VGS sales leads, so that each partner has a clear reason to work with Visa and a named first opportunity.</p></div>
+<div class="card"><div class="num">1</div><h3>Prioritize</h3><p>Build one ranked pipeline of partners, use cases and markets with the in-market VGS sales leads, so that each partner has a clear reason to work with Visa and a named first opportunity.</p></div>
 <div class="card"><div class="num">2</div><h3>Package</h3><p>Turn each priority use case into a joint solution that combines Visa capabilities with the partner platform, and feed the gaps back to the Visa solutions teams for the product roadmap.</p></div>
 <div class="card"><div class="num">3</div><h3>Scale</h3><p>Own the partners that already operate in several Asia Pacific markets with account plans, contracting, onboarding and joint RFP strategies, so that one agreement opens several markets.</p></div>
 </div>
+</section>
+
+<section id="trends">
+<h2>Payment market trends that shape VGS</h2>
+<p class="sub">Seven shifts from public sources, with what each one means for a government payments business. The VGS implications are my own reading.</p>
+<div class="stats">
+<div class="stat"><b>+116%</b><span>QRIS transactions year on year, Q1 2026 (Bank Indonesia, via The Star)</span></div>
+<div class="stat"><b>15B+</b><span>Visa Direct transactions in FY2026, about $1.5T in volume</span></div>
+<div class="stat"><b>+12%</b><span>Visa commercial payments volume in FY2026, the fastest in eight years outside the pandemic rebound</span></div>
+<div class="stat"><b>$7B</b><span>Annualized Visa stablecoin settlement run rate, April 2026</span></div>
+</div>
+<div class="grid g2">
+<div class="card trend"><div class="num">1</div><h3>National instant and QR rails grow and connect across borders</h3>
+<span class="lbl">Signal</span><p>QRIS reached 45.46 million merchants by July 2026, and it went live with China's QR system on 30 April 2026. ASEAN cross-border QR payments reached 12.9 million transactions in the first half of 2025. The BIS handed Project Nexus over to Nexus Global Payments.</p>
+<span class="lbl">For VGS</span><p class="vgs">Government payouts and domestic collections move to account-to-account rails such as PayNow and GovWallet. Visa wins where it adds cross-border reach, spend controls, credit, tokens and data on top of these rails.</p>
+<span class="pill">Disbursements</span><span class="pill">Collections</span></div>
+<div class="card trend"><div class="num">2</div><h3>Sovereignty and regulation reshape card economics</h3>
+<span class="lbl">Signal</span><p>In Australia, eftpos, Mastercard and Visa introduced no-surcharge rules from 1 October 2026, and the RBA lowered interchange caps and added a cap for foreign cards. In Indonesia, national network rules for GPN and QRIS remain part of US and Indonesian trade discussions.</p>
+<span class="lbl">For VGS</span><p class="vgs">A government is a regulator and a customer at the same time. Acceptance contracts with agencies that used to surcharge can change, and close work with Government Engagement keeps sales and policy aligned.</p>
+<span class="pill">Acceptance</span><span class="pill">Policy</span></div>
+<div class="card trend"><div class="num">3</div><h3>Agentic commerce moves from concept to pilots</h3>
+<span class="lbl">Signal</span><p>Visa launched Agentic Ready in Asia Pacific on 30 April 2026 with partners from 10 markets, including 13 issuers in Singapore. DBS was the first issuer in Asia Pacific to pilot Visa Intelligent Commerce, in February 2026.</p>
+<span class="lbl">For VGS</span><p class="vgs">Procurement and expense workflows are a natural government use case, where agents buy inside purchasing-card controls. This is my own hypothesis to test with the team.</p>
+<span class="pill">Commercial</span><span class="pill">AI</span></div>
+<div class="card trend"><div class="num">4</div><h3>Stablecoins and tokenized settlement reach production</h3>
+<span class="lbl">Signal</span><p>Visa's stablecoin settlement pilot supports nine blockchains. On 18 November 2026, Visa named Singapore-based dtcpay as the Asia Pacific pilot partner for stablecoin prefunding of Visa Direct payouts. MAS BLOOM builds the policy frame in Singapore.</p>
+<span class="lbl">For VGS</span><p class="vgs">This applies to cross-border government flows such as aid, scholarships and overseas payouts. Governments move slowly on digital assets, so this is a medium-term topic.</p>
+<span class="pill">Disbursements</span><span class="pill">New flows</span></div>
+<div class="card trend"><div class="num">5</div><h3>Money movement, commercial payments and services lead growth</h3>
+<span class="lbl">Signal</span><p>In FY2026, Visa value-added services revenue grew 30% in constant dollars to $14 billion, commercial payments volume grew 12%, and Visa Direct passed 15 billion transactions. These are global figures.</p>
+<span class="lbl">For VGS</span><p class="vgs">The VGS families sit in these growth areas: disbursements run on Visa Direct, purchasing and travel cards are commercial payments, and data, risk and controls are value-added services.</p>
+<span class="pill">All families</span></div>
+<div class="card trend"><div class="num">6</div><h3>Scams and identity become the main trust issue</h3>
+<span class="lbl">Signal</span><p>Singapore's scam situation improved in the first half of 2026, but investment scams caused the highest losses, and MAS will not extend the Shared Responsibility Framework to transfers that victims authorize. Visa names identity as the frontline of security for 2026.</p>
+<span class="lbl">For VGS</span><p class="vgs">For a government, payout leakage and fraud matter as much as speed. Tokens, spend controls and risk scoring help Visa win disbursement programs.</p>
+<span class="pill">Disbursements</span><span class="pill">Trust</span></div>
+<div class="card trend"><div class="num">7</div><h3>Cross-border travel stays strong</h3>
+<span class="lbl">Signal</span><p>In FY2026, Visa cross-border volume excluding intra-Europe rose 12%, with travel up 11% and e-commerce up 15%.</p>
+<span class="lbl">For VGS</span><p class="vgs">Visitor spending is a government KPI, so tourism boards buy data and acceptance. This explains the Visa agreements with tourism bodies in Singapore, Thailand and the Philippines.</p>
+<span class="pill">Data insights</span><span class="pill">Tourism</span></div>
+</div>
+<div class="say"><b>In one sentence:</b> national rails take more domestic flows, money movement and commercial payments grow faster than consumer cards, and new rails such as agents and stablecoins need trust, so the partner role is to bring banks, integrators and fintechs that design Visa into government programs early.</div>
 </section>
 
 <section id="archetypes">
@@ -103,7 +159,7 @@ footer li{margin-bottom:4px}
 <div class="card"><h3>Digital government platforms and system integrators</h3><p>They build and run the citizen and agency platforms where payments happen, and they lead most government RFPs.</p><span class="pill">RFP route</span><span class="pill">Multi-market</span></div>
 <div class="card"><h3>GovTech software and fintechs</h3><p>Disbursement, procurement, tax and case management software, plus processors and fintechs that can embed Visa credentials.</p><span class="pill">Embed</span><span class="pill">Fast to launch</span></div>
 <div class="card"><h3>Sector vertical specialists</h3><p>Transit, postal networks, health and logistics providers, where open-loop acceptance and commercial cards solve a clear agency problem.</p><span class="pill">Vertical depth</span></div>
-<div class="card"><h3>Humanitarian and development organisations</h3><p>Multilateral banks, NGOs and aid agencies that fund or run cash and voucher programmes and need fast, traceable disbursement.</p><span class="pill">Social impact</span></div>
+<div class="card"><h3>Humanitarian and development organizations</h3><p>Multilateral banks, NGOs and aid agencies that fund or run cash and voucher programs and need fast, traceable disbursement.</p><span class="pill">Social impact</span></div>
 <div class="card"><h3>Issuer and acquiring banks</h3><p>State and commercial banks that issue government cards and acquire government acceptance, and that partners need for every launch.</p><span class="pill">Delivery channel</span></div>
 <div class="card"><h3>Identity and digital public infrastructure</h3><p>Digital identity and DPI providers that link eligibility, identity and payment, which governments now ask for as one solution.</p><span class="pill">DPI</span></div>
 </div>
@@ -118,16 +174,16 @@ footer li{margin-bottom:4px}
 <table class="cards" id="reftab">
 <thead><tr><th>Partner</th><th>Type</th><th>Market</th><th>What was announced</th><th>Source</th></tr></thead>
 <tbody>
-<tr data-t="apac acc com"><td data-l="Partner"><b>FPT Corporation</b></td><td data-l="Type">Technology company and system integrator</td><td data-l="Market">Vietnam</td><td data-l="What was announced">MOU to modernise government services, digitise municipal services and give SMEs business credit cards.</td><td data-l="Source" class="src"><a href="https://fpt.com/en/news/fpt-news/fpt-hop-tac-voi-visa">FPT</a></td></tr>
+<tr data-t="apac acc com"><td data-l="Partner"><b>FPT Corporation</b></td><td data-l="Type">Technology company and system integrator</td><td data-l="Market">Vietnam</td><td data-l="What was announced">MOU to modernize government services, digitize municipal services and give SMEs business credit cards.</td><td data-l="Source" class="src"><a href="https://fpt.com/en/news/fpt-news/fpt-hop-tac-voi-visa">FPT</a></td></tr>
 <tr data-t="apac acc"><td data-l="Partner"><b>ETC and EPAY</b></td><td data-l="Type">GovTech IT provider and payment provider</td><td data-l="Market">Vietnam</td><td data-l="What was announced">Collaboration to accelerate digital payments in public services. ETC builds solutions for government agencies and banks.</td><td data-l="Source" class="src"><a href="https://www.visa.com.vn/en_VN/about-visa/newsroom/press-releases/visa-and-etc-epay-enter-agreement-to-accelerate-digital-payments-in-public-sectors-in-vietnam.html">Visa Vietnam</a></td></tr>
 <tr data-t="apac acc com mob"><td data-l="Partner"><b>LANDBANK</b></td><td data-l="Type">State-owned bank</td><td data-l="Market">Philippines</td><td data-l="What was announced">Card acceptance across digital government platforms, transit, agencies and procurement systems (Dec 2025), plus a Government Purchase Card for agency spend.</td><td data-l="Source" class="src"><a href="https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-landbank-sign-partnership-to-accelerate-digital-payment-acceptance-across-government-platforms.html">Visa Philippines</a>, <a href="https://procurementmag.com/articles/visa-and-landbank-expand-government-procurement-payments">Procurement Magazine</a></td></tr>
 <tr data-t="global dis"><td data-l="Partner"><b>Western Union</b></td><td data-l="Type">Money movement provider</td><td data-l="Market">Includes Asia Pacific</td><td data-l="What was announced">Debit card issuance in several regions, with prepaid cards for government and NGO customers in humanitarian relief (Mar 2024).</td><td data-l="Source" class="src"><a href="https://www.businesswire.com/news/home/20240305895918/en/Visa-and-Western-Union-Announce-Expanded-Collaboration-Transforming-How-Money-Travels-Cross-Border/">Business Wire</a></td></tr>
-<tr data-t="global dpi"><td data-l="Partner"><b>TECH5</b></td><td data-l="Type">Biometrics and digital identity</td><td data-l="Market">Global</td><td data-l="What was announced">Seven-year partnership to advance digital public infrastructure, with Visa funding for joint projects and a joint sales framework.</td><td data-l="Source" class="src"><a href="https://regtechanalyst.com/?p=77387">RegTech Analyst</a></td></tr>
-<tr data-t="global dis"><td data-l="Partner"><b>Episode Six and Secupay</b></td><td data-l="Type">Card processor and payment provider</td><td data-l="Market">Global</td><td data-l="What was announced">Government-to-citizen disbursements through the Visa Ready for Government Disbursements programme.</td><td data-l="Source" class="src"><a href="https://www.pymnts.com/?p=2417262">PYMNTS</a></td></tr>
-<tr data-t="global dis"><td data-l="Partner"><b>GiveCard</b></td><td data-l="Type">Disbursement platform</td><td data-l="Market">North America</td><td data-l="What was announced">Digital disbursement programmes for nonprofits and government agencies. It is a pattern to test with Asia Pacific platforms.</td><td data-l="Source" class="src"><a href="https://www.finextra.com/pressarticle/106111/givecard-partners-visa-to-modernise-disbursements-in-the-public-sector">Finextra</a></td></tr>
-<tr data-t="global mob"><td data-l="Partner"><b>Visa Ready for Transit</b></td><td data-l="Type">Partner programme (technology providers and consultancies)</td><td data-l="Market">Global</td><td data-l="What was announced">100 enrolled partners give transit agencies certified contactless solutions and simpler partner selection.</td><td data-l="Source" class="src"><a href="https://www.paymentsjournal.com/visa-expands-transit-partner-program-to-accelerate-delivery-of-improved-rider-journeys-around-the-world/amp/">Payments Journal</a></td></tr>
+<tr data-t="global dpi"><td data-l="Partner"><b>TECH5</b></td><td data-l="Type">Biometrics and digital identity</td><td data-l="Market">Global</td><td data-l="What was announced">Partnership to advance digital public infrastructure, announced in January 2024.</td><td data-l="Source" class="src"><a href="https://regtechanalyst.com/?p=77387">RegTech Analyst</a></td></tr>
+<tr data-t="global dis"><td data-l="Partner"><b>Episode Six and Secupay</b></td><td data-l="Type">Card processor and payment provider</td><td data-l="Market">Global</td><td data-l="What was announced">Government-to-citizen disbursements through the Visa Ready for Government Disbursements program.</td><td data-l="Source" class="src"><a href="https://www.pymnts.com/?p=2417262">PYMNTS</a></td></tr>
+<tr data-t="global dis"><td data-l="Partner"><b>GiveCard</b></td><td data-l="Type">Disbursement platform</td><td data-l="Market">North America</td><td data-l="What was announced">Digital disbursement programs for nonprofits and government agencies. It is a pattern to test with Asia Pacific platforms.</td><td data-l="Source" class="src"><a href="https://www.finextra.com/pressarticle/106111/givecard-partners-visa-to-modernize-disbursements-in-the-public-sector">Finextra</a></td></tr>
+<tr data-t="global mob"><td data-l="Partner"><b>Visa Ready for Transit</b></td><td data-l="Type">Partner program (technology providers and consultancies)</td><td data-l="Market">Global</td><td data-l="What was announced">100 enrolled partners give transit agencies certified contactless solutions and simpler partner selection.</td><td data-l="Source" class="src"><a href="https://www.paymentsjournal.com/visa-expands-transit-partner-program-to-accelerate-delivery-of-improved-rider-journeys-around-the-world/amp/">Payments Journal</a></td></tr>
 </tbody></table>
-<p class="note">Three findings: (1) in Vietnam, Visa works with local GovTech and SI players to reach agencies, which is the enabler model in practice; (2) in the Philippines, one state bank covers acceptance, procurement and transit in a single partnership; (3) the global programmes (Visa Ready, TECH5) give a repeatable template for Asia Pacific partners.</p>
+<p class="note">Three findings: (1) in Vietnam, Visa works with local GovTech and SI players to reach agencies, which is the enabler model in practice; (2) in the Philippines, one state bank covers acceptance, procurement and transit in a single partnership; (3) the global programs (Visa Ready, TECH5) give a repeatable template for Asia Pacific partners.</p>
 </section>
 
 <section id="map">
@@ -144,7 +200,7 @@ footer li{margin-bottom:4px}
 <tr><td>Digital identity and DPI</td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d2"></span></td></tr>
 </tbody></table></div>
 <div class="legend"><span><i class="dot d1"></i> Public partnership or live service in the market</span><span><i class="dot d2"></i> Adjacent signal or global pattern to bring in</span><span><i class="dot d0"></i> No public signal found yet</span></div>
-<p class="note">Bases: Vietnam (FPT, ETC and EPAY), Philippines (LANDBANK), Australia (open-loop transit and the Visa council data insights case study), Singapore (card payment on buses and trains through SimplyGo), global programmes for the other cells.</p>
+<p class="note">Bases: Vietnam (FPT, ETC and EPAY), Philippines (LANDBANK), Australia (open-loop transit and the Visa council data insights case study), Singapore (card payment on buses and trains through SimplyGo), global programs for the other cells.</p>
 </section>
 
 <section id="lifecycle">
@@ -176,8 +232,34 @@ footer li{margin-bottom:4px}
 </section>
 
 <section id="deals">
-<h2>RFP and deal structuring levers</h2>
-<p class="sub">These are the ways VGS can support partner-led bids and the commercial frameworks to choose from. Each lever needs approval from the relevant Visa teams.</p>
+<h2>RFPs and deal structuring</h2>
+<p class="sub">Agencies usually buy payment services from a bank, an acquirer or an integrator. Visa enters the RFP through the specification (brand, credential, data, controls) or through the bidder it supports.</p>
+
+<h3 class="sec">Anatomy of a government payments RFP</h3>
+<div class="steps">
+<div class="step"><b>1. Market engagement</b>The agency runs an RFI or market sounding to test options and shape the scope.<small>Partner move: shape requirements early, inside procurement rules</small></div>
+<div class="step"><b>2. RFP or panel issued</b>The scope is set as one contract, a panel or a framework with lots that agencies call off.<small>Partner move: bid or no-bid, and choose the lead bidder</small></div>
+<div class="step"><b>3. Requirements</b>Functional scope, card or acceptance products, integration with finance and travel systems, security, data and reporting.<small>Partner move: map each requirement to Visa and partner capability</small></div>
+<div class="step"><b>4. Pricing schedule</b>Fees to the agency, fees to cardholders or citizens, rebates and any cost-to-State limits.<small>Partner move: joint pricing logic and a value case</small></div>
+<div class="step"><b>5. Evaluation and award</b>Scored on price, capability, references and risk, often with presentations and clarifications.<small>Partner move: references, case studies and demos</small></div>
+<div class="step"><b>6. Contract and mobilization</b>A multi-year term with extension options, service levels and onboarding of agencies.<small>Partner move: launch plan, adoption and spend growth</small></div>
+</div>
+
+<h3 class="sec">Typical RFP types, with public examples</h3>
+<table class="cards">
+<thead><tr><th>RFP type</th><th>Example</th><th>What the buyer asked for</th><th>Where Visa fits</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td data-l="RFP type"><b>Whole-of-government travel and procurement cards</b></td><td data-l="Example">Australian Government, Travel and Procurement Payment Services (TAPPS), Department of Finance</td><td data-l="What the buyer asked for">Payment solutions for airfares, accommodation and car rental booked through the whole-of-government travel arrangements, with GST-compliant data, plus purchasing cards and virtual cards. NAB is now the sole provider.</td><td data-l="Where Visa fits">Entities must use a NAB Visa Lodge card for airfares, travel management fees, domestic accommodation and car rental. Visa supplies the credential, the data and the controls, and the bank holds the contract.</td><td data-l="Source" class="src"><a href="https://finance.gov.au/government/travel-arrangements/pay-card-services">Dept of Finance</a>, <a href="https://www.finance.gov.au/government/travel-arrangements/book-travel-management/payment-services">FAQ</a></td></tr>
+<tr><td data-l="RFP type"><b>State purchasing card arrangement</b></td><td data-l="Example">Western Australia, Purchasing Card Services and Expense Management System (CUAPC2019)</td><td data-l="What the buyer asked for">Physical, virtual and single-use purchasing cards, a card management system, an ePayables system and expenditure data and analysis. The arrangement is mandatory for state public authorities.</td><td data-l="Where Visa fits">The card is a Visa Purchasing Card branded with the WA Government logo, issued by NAB, for low-value and high-volume transactions.</td><td data-l="Source" class="src"><a href="https://www.wa.gov.au/government/cuas/purchasing-card-services-and-expense-management-system-cuapc2019">WA Government</a></td></tr>
+<tr><td data-l="RFP type"><b>Whole-of-government banking and payments</b></td><td data-l="Example">New South Wales Government</td><td data-l="What the buyer asked for">Whole-of-government banking and payment services for five years, awarded to NAB.</td><td data-l="Where Visa fits">Card issuing and acquiring sit inside a larger banking tender, so Visa supports the bank bidder with products and data.</td><td data-l="Source" class="src"><a href="https://www.nab.com.au/news/business-banking/nsw-government-puts-trust-in-nab-to-transform-banking-and-payments">NAB</a></td></tr>
+<tr><td data-l="RFP type"><b>Payment acceptance framework (acquiring and gateway)</b></td><td data-l="Example">UK Crown Commercial Service, Payment Acceptance RM6118 (global pattern)</td><td data-l="What the buyer asked for">Card acquiring and gateway services, payment equipment, alternative payment methods and payment initiation services, split into lots for public sector bodies to call off. The replacement framework had an estimated value of GBP 1.2 billion.</td><td data-l="Where Visa fits">Acquirers, gateways and integrators bid, and Visa acceptance, tokens and fraud tools sit inside their offer.</td><td data-l="Source" class="src"><a href="https://www.contractsfinder.service.gov.uk/Notice/Attachment/02e55a83-5efa-46f4-84f7-bbc6790f010b">Contracts Finder</a>, <a href="https://www.find-tender.service.gov.uk/Notice/006850-2023/PDF">Find a Tender</a></td></tr>
+<tr><td data-l="RFP type"><b>Prepaid benefit and disbursement card</b></td><td data-l="Example">State of Tennessee, Prepaid Debit Card Services, RFP 31701-03585, 2025 (global pattern)</td><td data-l="What the buyer asked for">A Visa or Mastercard branded prepaid card to deliver agency benefits, with no fees to the State, for child support, unemployment insurance, retirement, education account and payroll payments.</td><td data-l="Where Visa fits">The network brand is written into the specification, and a program manager and an issuer bid together.</td><td data-l="Source" class="src"><a href="https://www.tn.gov/content/dam/tn/generalservices/documents/cpo/rfp-updates/31701-03585/RFP_31701-03585_Prepaid_Debit_Card.pdf">Tennessee RFP</a>, <a href="https://www.bidnetdirect.com/public/supplier/solicitations/statewide/443504971691/abstract">BidNet</a></td></tr>
+<tr><td data-l="RFP type"><b>Digital government platform with a payment module</b></td><td data-l="Example">Philippines, LANDBANK acceptance on government platforms (Dec 2025)</td><td data-l="What the buyer asked for">Card acceptance across digital government platforms, transit, agencies and procurement systems, delivered through the state bank.</td><td data-l="Where Visa fits">The integrator or state bank builds the platform, and Visa supplies acceptance and the purchase card.</td><td data-l="Source" class="src"><a href="https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-landbank-sign-partnership-to-accelerate-digital-payment-acceptance-across-government-platforms.html">Visa Philippines</a></td></tr>
+<tr><td data-l="RFP type"><b>Open-loop transit</b></td><td data-l="Example">Singapore SimplyGo, and transit agencies served through Visa Ready for Transit</td><td data-l="What the buyer asked for">Contactless card payment on buses and trains, with certified ticketing technology.</td><td data-l="Where Visa fits">Ticketing vendors and acquirers bid. The Visa Ready for Transit program gives agencies certified partners to choose from.</td><td data-l="Source" class="src"><a href="https://au.review.visa.com/pay-with-visa/featured-technologies/transit.html">Visa</a>, <a href="https://www.paymentsjournal.com/visa-expands-transit-partner-program-to-accelerate-delivery-of-improved-rider-journeys-around-the-world/amp/">Payments Journal</a></td></tr>
+</tbody></table>
+<p class="note">Pattern: the bank, acquirer or integrator holds the contract, while Visa shapes the specification and strengthens the bidder. This is why the choice of partner before the RFP matters so much.</p>
+
+<h3 class="sec">How VGS supports partner-led bids</h3>
 <div class="grid g2">
 <div class="card"><h3>Partner-led RFP support</h3>
 <ul class="chk">
@@ -193,7 +275,7 @@ footer li{margin-bottom:4px}
 <li>Referral or reseller agreement with a revenue share on volume</li>
 <li>Co-investment in go-to-market, such as joint events, pilots and marketing funds</li>
 <li>Technology partnership with API integration and service level commitments</li>
-<li>Programme enrolment, such as Visa Ready, with certification steps</li>
+<li>Program enrollment, such as Visa Ready, with certification steps</li>
 <li>Strategic agreement for multi-market partners with an annual joint business plan</li>
 <li>Review and exit clauses tied to the partner scorecard</li>
 </ul></div>
@@ -201,7 +283,7 @@ footer li{margin-bottom:4px}
 </section>
 
 <section id="scorecard">
-<h2>Partner prioritisation scorecard</h2>
+<h2>Partner prioritization scorecard</h2>
 <p class="sub">An illustrative model. The weights are a starting point to agree with the team, and the example partners use placeholder scores.</p>
 <div class="score">
 <div class="card">
@@ -209,7 +291,7 @@ footer li{margin-bottom:4px}
 <option value="custom">Your own scores</option>
 <option value="si" selected>Example: regional system integrator</option>
 <option value="ft">Example: disbursement fintech</option>
-<option value="dev">Example: development organisation</option>
+<option value="dev">Example: development organization</option>
 </select>
 <div id="sliders"></div>
 </div>
@@ -243,7 +325,7 @@ footer li{margin-bottom:4px}
 <p class="sub">A plan to test with the team, built around the role scope.</p>
 <div class="grid g3">
 <div class="card"><h3>Days 1 to 30: listen and map</h3><p>Meet the in-market VGS sales leads, the solutions teams and global VGS colleagues. Review the signed partners and the live RFPs. Build the first ranked list of partners, use cases and markets.</p></div>
-<div class="card"><h3>Days 31 to 60: prioritise and package</h3><p>Agree the top partners per market with the sales leads. Write the joint value propositions for two or three priority use cases, and open structured discussions with the first multi-market partners.</p></div>
+<div class="card"><h3>Days 31 to 60: prioritize and package</h3><p>Agree the top partners per market with the sales leads. Write the joint value propositions for two or three priority use cases, and open structured discussions with the first multi-market partners.</p></div>
 <div class="card"><h3>Days 61 to 90: prove it in the field</h3><p>Start joint account plans with the priority partners, support the first joint RFP response, and set a quarterly review cadence with partner scorecards for leadership.</p></div>
 </div>
 </section>
@@ -256,7 +338,7 @@ footer li{margin-bottom:4px}
 <li>Which use cases are the regional priorities for the next twelve months: disbursements, acceptance, commercial payments, mobility, data or new flows such as CBDC and stablecoins?</li>
 <li>Which government RFPs are live or expected, and which partners lead them?</li>
 <li>How is partner-influenced revenue measured and credited to the team?</li>
-<li>Which partner programmes (for example Visa Ready) and which funding can support onboarding in the region?</li>
+<li>Which partner programs (for example Visa Ready) and which funding can support onboarding in the region?</li>
 </ol></div>
 </section>
 </main>
@@ -264,18 +346,40 @@ footer li{margin-bottom:4px}
 <footer><div class="wrap" id="sources">
 <b>Sources (public, checked November 2026)</b>
 <ul>
-<li><a href="https://fpt.com/en/news/fpt-news/fpt-hop-tac-voi-visa">FPT: Visa partners with FPT to modernise government services</a></li>
+<li><a href="https://fpt.com/en/news/fpt-news/fpt-hop-tac-voi-visa">FPT: Visa partners with FPT to modernize government services</a></li>
 <li><a href="https://www.visa.com.vn/en_VN/about-visa/newsroom/press-releases/visa-and-etc-epay-enter-agreement-to-accelerate-digital-payments-in-public-sectors-in-vietnam.html">Visa Vietnam: Visa and ETC-EPAY agreement</a></li>
 <li><a href="https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-landbank-sign-partnership-to-accelerate-digital-payment-acceptance-across-government-platforms.html">Visa Philippines: Visa and LANDBANK partnership</a></li>
 <li><a href="https://procurementmag.com/articles/visa-and-landbank-expand-government-procurement-payments">Procurement Magazine: LANDBANK Visa Government Purchase Card</a></li>
 <li><a href="https://www.businesswire.com/news/home/20240305895918/en/Visa-and-Western-Union-Announce-Expanded-Collaboration-Transforming-How-Money-Travels-Cross-Border/">Business Wire: Visa and Western Union</a></li>
 <li><a href="https://regtechanalyst.com/?p=77387">RegTech Analyst: Visa and TECH5</a></li>
 <li><a href="https://www.pymnts.com/?p=2417262">PYMNTS: Visa, Episode Six and Secupay</a></li>
-<li><a href="https://www.finextra.com/pressarticle/106111/givecard-partners-visa-to-modernise-disbursements-in-the-public-sector">Finextra: GiveCard and Visa</a></li>
+<li><a href="https://www.finextra.com/pressarticle/106111/givecard-partners-visa-to-modernize-disbursements-in-the-public-sector">Finextra: GiveCard and Visa</a></li>
 <li><a href="https://www.paymentsjournal.com/visa-expands-transit-partner-program-to-accelerate-delivery-of-improved-rider-journeys-around-the-world/amp/">Payments Journal: Visa Ready for Transit</a></li>
 <li><a href="https://www.visa.co.in/supporting-info/australia-case-study.html">Visa: Australia data insights case study</a></li>
 <li><a href="https://au.review.visa.com/pay-with-visa/featured-technologies/transit.html">Visa: tap to pay on buses and trains, TransitLink SimplyGo</a></li>
 <li><a href="https://partner.visa.com/site/programs/visa-ready/government-disbursements.html">Visa Ready: Government Disbursements</a></li>
+<li><a href="https://www.thestar.com.my/business/business-news/2026/06/16/cross-border-qr-linksnow-in-daily-use">The Star: cross-border QR links now in daily use (QRIS growth, China link)</a></li>
+<li><a href="https://www.bi.go.id/en/publikasi/ruang-media/news-release/pages/sp_2819126.aspx">Bank Indonesia: QRIS Cross-Border</a></li>
+<li><a href="https://www.thestar.com.my/business/business-news/2025/11/19/asean-cross-border-qr-payment-surges-to--rm129mil-transactions-in-1h25---bank-negara-governor">The Star: ASEAN cross-border QR transactions, 1H 2025</a></li>
+<li><a href="https://www.bis.org/project/nexus">BIS: Project Nexus</a></li>
+<li><a href="https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html">RBA: removal of card surcharges from 1 October 2026</a></li>
+<li><a href="https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/index.html">RBA: Conclusions Paper in brief</a></li>
+<li><a href="https://www.mfat.govt.nz/mi/trade/mfat-market-reports/indonesia-quick-response-code-indonesian-standard">MFAT: Indonesia QRIS market report</a></li>
+<li><a href="https://www.visa.com.sg/about-visa/newsroom/press-releases/visa-launches-agentic-ready-program-in-asia-pacific-with-over-50-partners-advancing-agentic-commerce.html">Visa: Agentic Ready in Asia Pacific</a></li>
+<li><a href="https://sg.review.visa.com/about-visa/newsroom/press-releases/visa-launches-agentic-ready-program-in-singapore-with-13-banks-and-fintech-partners.html">Visa: Agentic Ready in Singapore</a></li>
+<li><a href="https://www.aap.com.au/aapreleases/cision20260215ae88523">Visa: DBS pilots Visa Intelligent Commerce</a></li>
+<li><a href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22336.html">Visa: stablecoin settlement adds five blockchains</a></li>
+<li><a href="https://theblock.co/news/business/2026-11-18-visa-direct-extend-stablecoin-prefunding-cross-border-payouts-asia-pacific-443457">The Block: Visa Direct stablecoin prefunding in Asia Pacific</a></li>
+<li><a href="https://www.alpha-sense.com/earnings/v/">AlphaSense: Visa Q4 and FY2026 highlights</a></li>
+<li><a href="https://www.benzinga.com/node/62641564">Benzinga: Visa Q4 2026 earnings call</a></li>
+<li><a href="https://fintechnews.sg/137029/security/singapore-investment-scam-shared-responsibility-framework/">Fintech News Singapore: SRF and investment scams</a></li>
+<li><a href="https://www.police.gov.sg/-/media/SPF/Media-Room/Statistics/Mid-Year-Scam-and-Cybercrime-Brief-2026/Mid-Year-Scam-and-Cybercrime-Brief-2026.pdf">SPF: Mid-Year Scam and Cybercrime Brief 2026</a></li>
+<li><a href="https://my.review.visa.com/about-visa/newsroom/press-releases/from-ai-to-identity-key-forces-driving-payments-in-2026.html">Visa: key forces driving payments in 2026</a></li>
+<li><a href="https://finance.gov.au/government/travel-arrangements/pay-card-services">Australian Department of Finance: TAPPS card services</a></li>
+<li><a href="https://www.wa.gov.au/government/cuas/purchasing-card-services-and-expense-management-system-cuapc2019">WA Government: Purchasing Card CUAPC2019</a></li>
+<li><a href="https://www.nab.com.au/news/business-banking/nsw-government-puts-trust-in-nab-to-transform-banking-and-payments">NAB: NSW Government banking and payments</a></li>
+<li><a href="https://www.contractsfinder.service.gov.uk/Notice/Attachment/02e55a83-5efa-46f4-84f7-bbc6790f010b">UK Contracts Finder: RM6118 Payment Acceptance</a></li>
+<li><a href="https://www.tn.gov/content/dam/tn/generalservices/documents/cpo/rfp-updates/31701-03585/RFP_31701-03585_Prepaid_Debit_Card.pdf">State of Tennessee: Prepaid Debit Card RFP</a></li>
 </ul>
 <p>This page is an outside view built from public information. It makes no claim about Visa internal plans, partners or figures.</p>
 </div></footer>
