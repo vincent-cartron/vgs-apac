@@ -74,6 +74,9 @@ h3.sec{font-size:16px;color:var(--navy);margin:22px 0 10px}
 .trend .lbl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin:10px 0 2px}
 .trend .vgs{background:#f3f4fb;border-left:4px solid var(--gold);border-radius:6px;padding:8px 10px;margin-top:4px}
 .say{background:#fff;border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:14px}
+.mxwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.mx td:first-child{min-width:150px}
+.mx td.c{cursor:pointer}.mx td.c:hover{background:#f3f4fb}.mx td.sel{background:#fff4cc;box-shadow:inset 0 0 0 2px var(--gold)}
+#mxd h3{margin:0 0 6px}#mxd dl{margin:0;display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:14px}#mxd dt{font-weight:700;color:var(--muted);font-size:12px;text-transform:uppercase;padding-top:2px}#mxd dd{margin:0}
 @media (max-width:820px){
  table.cards thead{display:none}
  table.cards,table.cards tbody,table.cards tr,table.cards td{display:block;width:100%}
@@ -192,19 +195,10 @@ h3.sec{font-size:16px;color:var(--navy);margin:22px 0 10px}
 
 <section id="map">
 <h2>Use case map by market</h2>
-<p class="sub">Public signals only. A blank cell means that I did not find a public signal yet, and it is a question for week one.</p>
-<div class="mxwrap"><table class="mx">
-<thead><tr><th>Use case</th><th>Vietnam</th><th>Philippines</th><th>Australia</th><th>Singapore</th><th>Indonesia</th><th>Other markets</th></tr></thead>
-<tbody>
-<tr><td>Citizen payments to government (taxes, fees)</td><td><span class="dot d1"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td></tr>
-<tr><td>Commercial payments and procurement cards</td><td><span class="dot d2"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td></tr>
-<tr><td>Disbursements and social payments</td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d2"></span></td></tr>
-<tr><td>Urban mobility and tap to ride</td><td><span class="dot d0"></span></td><td><span class="dot d1"></span></td><td><span class="dot d1"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d2"></span></td></tr>
-<tr><td>Data insights for tourism and policy</td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d1"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td></tr>
-<tr><td>Digital identity and DPI</td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d0"></span></td><td><span class="dot d2"></span></td></tr>
-</tbody></table></div>
-<div class="legend"><span><i class="dot d1"></i> Public partnership or live service in the market</span><span><i class="dot d2"></i> Adjacent signal or global pattern to bring in</span><span><i class="dot d0"></i> No public signal found yet</span></div>
-<p class="note">Bases: Vietnam (FPT, ETC and EPAY), Philippines (LANDBANK), Australia (open-loop transit and the Visa council data insights case study), Singapore (card payment on buses and trains through SimplyGo), global programs for the other cells.</p>
+<p class="sub">Public signals only. Tap or click any cell to see the evidence behind it: the program, the partners, the date and the source.</p>
+<div class="mxwrap"><table class="mx" id="mxt"><thead></thead><tbody></tbody></table></div>
+<div class="legend"><span><i class="dot d1"></i> Public partnership or live program</span><span><i class="dot d2"></i> Stated plan, adjacent signal or policy change</span><span><i class="dot d0"></i> No public signal found yet</span></div>
+<div class="card" id="mxd" style="margin-top:12px"><p class="note" style="margin:0">Tap a cell to see the evidence.</p></div>
 </section>
 
 <section id="lifecycle">
@@ -401,6 +395,43 @@ sel.addEventListener("change",function(){load(sel.value);});
 box.addEventListener("input",function(){sel.value="custom";calc();});
 load("si");
 document.getElementById("flt").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;document.querySelectorAll("#flt button").forEach(function(x){x.classList.toggle("on",x===b);});var f=b.getAttribute("data-f");document.querySelectorAll("#reftab tbody tr").forEach(function(r){r.style.display=(f==="all"||r.getAttribute("data-t").split(" ").indexOf(f)>-1)?"":"none";});});
+var MK=["Philippines","Vietnam","Singapore","Australia","Bangladesh","Thailand","Cambodia","Indonesia"];
+var UC=["Citizen payments to government","Agency spending cards","Payments to citizens","Open-loop transit","Tourism and policy data","Inclusion and MSMEs","Identity and risk"];
+var V="https://www.visa.com.vn/en_VN/about-visa/newsroom/press-releases/";
+var MX={
+"0|Philippines":[1,"LANDBANK card acceptance on Link.BizPortal (its government e-payment facility) and support for eGov.ph, the national services portal.","LANDBANK (state bank)","Signed 29 Dec 2025","https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-landbank-sign-partnership-to-accelerate-digital-payment-acceptance-across-government-platforms.html"],
+"0|Vietnam":[1,"Card acceptance for public service providers through ETC and EPAY; Visa capabilities in VNPT services, including the National Public Service Payment Portal; FPT on government and municipal services.","ETC, EPAY, VNPT-Media, FPT","Dec 2024 (FPT), Mar 2025 (VNPT-Media), May 2025 (ETC and EPAY)",V+"visa-and-etc-epay-enter-agreement-to-accelerate-digital-payments-in-public-sectors-in-vietnam.html"],
+"0|Australia":[2,"Agencies accept cards widely. From 1 Oct 2026, eftpos, Mastercard and Visa apply no-surcharge rules, which changes the economics of agency acceptance.","Acquiring banks","1 Oct 2026, in force","https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/conclusions-paper/faqs/index.html"],
+"1|Philippines":[1,"LANDBANK Visa Government Purchase Card, which moves agencies from cash advances and manual reimbursement to digital purchasing.","LANDBANK (issuer)","Launched 21 Jul 2026","https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-landbank-introduce-new-government-purchase-card-to-accelerate-digitalization-of-government-transactions.html"],
+"1|Vietnam":[2,"The FPT MoU covers the national e-marketplace for procurement and business credit cards for SMEs.","FPT (system integrator)","MoU, 5 Dec 2024","https://fpt.com/en/news/fpt-news/fpt-hop-tac-voi-visa"],
+"1|Singapore":[2,"The Head of VGS Asia Pacific cites expense management platforms for government as an example; no named program.","Not named","Undated","https://govinsider.asia/intl-en/article/shaping-a-bright-and-inclusive-digital-future-in-malaysia-and-beyond"],
+"1|Australia":[1,"Australian Government TAPPS: NAB is the sole provider, and entities must use a NAB Visa Lodge card for airfares, travel fees, domestic hotels and car rental. Western Australia uses a Visa Purchasing Card issued by NAB.","NAB (issuer)","TAPPS novated to NAB in 2023; WA CUAPC2019","https://www.finance.gov.au/government/travel-arrangements/book-travel-management/payment-services"],
+"2|Singapore":[0,"Cash payouts use PayNow-NRIC, and vouchers use GovWallet and RedeemSG with PayNow and NETS QR. No Visa role found.","GovTech, MOF, CDCs","2026","https://www.developer.tech.gov.sg/products/categories/platform/govwallet/features-roadmap"],
+"2|Bangladesh":[1,"Government Farmers Card: farmer identity plus Visa payments for subsidies and services, exclusively on the Visa network. Earlier, the Smart Farmer's Card with BRAC Bank for dairy farmers.","Sonali Bank (state bank), Ministry of Agriculture; BRAC Bank","2026 national launch, after a pre-pilot for 21,500 farmers","https://en.prothomalo.com/corporate/ny1e0z71fp"],
+"3|Philippines":[1,"Contactless fares on all 13 LRT-2 stations with Visa cards, QR and NFC devices, after MRT-3 and bus pilots in Cebu, Mandaue and Bacolod.","RCBC, DOTr, LRTA; GHL and Good Transport for buses","LRT-2 live 13 Jul 2026","https://www.visa.com.ph/about-visa/newsroom/press-releases/visa-expands-digital-inclusion-with-contactless-fare-collection-in-lrt-2.html"],
+"3|Vietnam":[1,"Open-loop payments on Hanoi Metro Lines 2A and 3.1, after Ho Chi Minh City Metro Line 1 in Mar 2025.","Hanoi Metro Company, VietinBank (acquirer)","23 Mar 2026",V+"visa-and-hanoi-metro-mark-a-new-milestone-in-urban-mobility-with-open-loop-payments-across-the-capitals-metro-network.html"],
+"3|Singapore":[1,"SimplyGo: contactless card payment on buses and MRT across about 30,000 acceptance points.","Land Transport Authority, UOB (acquirer)","Visa live since Jun 2019","https://sg.review.visa.com/about-visa/newsroom/press-releases/visa-contactless-payments-now-live-for-singapore-transit.html"],
+"3|Australia":[1,"Tap to pay with Visa on buses and trains in Australian cities.","Transit agencies and acquirers","Live","https://au.review.visa.com/pay-with-visa/featured-technologies/transit.html"],
+"4|Philippines":[1,"Tourism MoU on cashless readiness for tourists and MSMEs.","Department of Tourism","Late 2025, MoU","https://www.travelandtourworld.com/news/article/visa-dot-partnership-drives-digital-payment-adoption-and-growth-in-philippine-tourism-get-the-details-here/"],
+"4|Singapore":[1,"Three-year MoU with the Singapore Tourism Board, with Visa Destinations.","Singapore Tourism Board","Oct 2026","https://www.prnewswire.com/apac/news-releases/visa-partners-singapore-tourism-board-to-strengthen-singapores-global-destination-appeal-302917600.html"],
+"4|Australia":[1,"Tourism insights dashboard on VisaNet data, and Gold Coast tourism development.","Australian government, Gold Coast region","Undated","https://govinsider.asia/intl-en/article/how-digital-payments-can-transform-governments-in-asia-pacific"],
+"4|Thailand":[1,"Partnership on value-led inbound tourism; Visa Destinations launched Jul 2026.","Tourism Authority of Thailand","29 May 2026","https://www.visa.co.th/en_TH/about-visa/newsroom/press-releases/visa-and-tourism-authority-of-thailand-tat-partner-to-shape-thailands-next-phase-of-value-led-inbound-tourism.html"],
+"5|Vietnam":[2,"VNPT-Media plans to use Visa data insights for alternative credit scoring of SMEs.","VNPT-Media","Mar 2025",V+"visa-and-vnpt-media-sign-mou-to-advance-digital-and-financial-inclusion-in-vietnam.html"],
+"5|Bangladesh":[1,"Smart Farmer's Card for rural and unbanked cattle farmers.","BRAC Bank, Bangladesh Dairy Farmers' Association, Ministry of Fisheries and Livestock","Undated","https://govinsider.asia/intl-en/article/how-digital-payments-can-transform-governments-in-asia-pacific"],
+"5|Cambodia":[1,"Vee Together by Visa: finance, digital payments and skills for tourism MSMEs.","Wing Bank, The Asia Foundation, Good Return","27 Feb 2026","https://www.visa.com.kh/en_KH/about-visa/newsroom/press-releases/visa-launches-vee-together-by-visa-program-to-strengthen-cambodias-tourism-msmes-with-better-access-to-finance-digital-payments-and-skills.html"],
+"6|Vietnam":[2,"Visa states a collaboration with the government on citizen ID solutions; the 2026 Digital Government Forum showed welfare, tax and citizen wallet use cases.","Government agencies","2025 to Mar 2026",V+"visa-deepens-partnership-with-vietnam-government-to-advance-smart-cities-and-digital-payments.html"],
+"6|Bangladesh":[1,"The Government Farmers Card combines farmer identity with Visa payments.","Sonali Bank, Ministry of Agriculture","2026","https://en.prothomalo.com/corporate/ny1e0z71fp"]
+};
+(function(){var t=document.getElementById("mxt");
+t.querySelector("thead").innerHTML="<tr><th>Use case</th>"+MK.map(function(m){return "<th>"+m+"</th>"}).join("")+"</tr>";
+t.querySelector("tbody").innerHTML=UC.map(function(u,i){return "<tr><td>"+u+"</td>"+MK.map(function(m){var c=MX[i+"|"+m],l=c?c[0]:0;return '<td class="c" tabindex="0" data-k="'+i+'|'+m+'" aria-label="'+u+', '+m+'"><span class="dot d'+l+'"></span></td>'}).join("")+"</tr>"}).join("");
+var box=document.getElementById("mxd"),lab=["No public signal found","Public partnership or live program","Stated plan, adjacent signal or policy change"];
+function show(td){t.querySelectorAll("td.sel").forEach(function(x){x.classList.remove("sel")});td.classList.add("sel");var k=td.dataset.k.split("|"),c=MX[td.dataset.k],u=UC[+k[0]],m=k[1];
+if(!c){box.innerHTML="<h3>"+m+" · "+u+"</h3><p>No public signal found in November 2026. This does not mean that Visa has no activity there; it is a question for week one.</p>";return;}
+box.innerHTML="<h3>"+m+" · "+u+"</h3><dl><dt>Status</dt><dd><span class='dot d"+c[0]+"' style='vertical-align:-2px'></span> "+lab[c[0]]+"</dd><dt>What</dt><dd>"+c[1]+"</dd><dt>Partners</dt><dd>"+c[2]+"</dd><dt>When</dt><dd>"+c[3]+"</dd><dt>Source</dt><dd><a href='"+c[4]+"' target='_blank' rel='noopener'>Open source</a></dd></dl>";}
+t.addEventListener("click",function(e){var td=e.target.closest("td.c");if(td)show(td)});
+t.addEventListener("keydown",function(e){if(e.key==="Enter"){var td=e.target.closest("td.c");if(td)show(td)}});
+})();
 </script>
 </body>
 </html>
